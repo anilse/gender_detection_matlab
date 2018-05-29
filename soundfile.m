@@ -114,10 +114,10 @@ plot(d, r);
 title('Autocorrelation');
 xlabel('Delay (ms)');
 ylabel('Correlation coeff.');
-ms2 = fs/500; %maximum speech Fx at 500Hz
-ms20 = fs/50; %maximum speech Fx at 50Hz
+ms2 = fs/500; %speech Fx at 500Hz
+ms20 = fs/50; %speech Fx at 50Hz
 %just look at region corresponding to positive delays
-r = r(ms20 + 1 : end);
+r = r(ms20 + 1 : 2*ms20 + 1);
 [rmax, tx] = max(r(ms2:end));
 Fx = fs/(ms2+tx-1);
 
